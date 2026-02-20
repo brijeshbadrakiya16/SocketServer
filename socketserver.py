@@ -127,7 +127,3 @@ async def webrtc_signal(sid, data):
     
     # Relay the signal to the specific target peer
     await sio.emit("webrtc_signal", {"sender_sid": sid, "payload": payload}, to=target_sid)
-
-if __name__ == '__main__':
-    # Run the server using Uvicorn
-    uvicorn.run("main:socket_app", host="0.0.0.0", port=8000, reload=True)
